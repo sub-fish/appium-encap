@@ -98,14 +98,16 @@ class PlatForm(object):
                  # print os.getcwd()
                 self.image = self.driver.save_screenshot(self.savePngName(name))
                 return self.image
-                
-     #封装sendkeys          
-     def elssendkey(self):
-        self.d9 = (By.ID,"digit9")
-        self.getels(self.d9).send_keys("99")
+     def getels(self, lo):
+        #关键在于传参，只有在这一级才会有使用*号解析字典
+        return self.driver.find_element(*lo)
 
-    def runquit(self):
-        self.driver.quit()
+    def elssendkey(self):
+        #此处传参无需*
+        self.getels(self.d9).click()
+        self.getels(self.d2).click()
+               
+
 
 
 
