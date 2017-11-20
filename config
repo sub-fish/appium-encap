@@ -1,0 +1,6 @@
+[driver]
+platformVersion = 4.3
+platformName = Android
+deviceName = 192.168.199.101:5555
+appPackage = com.android.calculator2
+appActivity = .Calculator
